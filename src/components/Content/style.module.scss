@@ -1,0 +1,64 @@
+@font-face {
+  font-family: "Voyage-Regular";
+  src: url(../../../public/fonts/Voyage-Regular.otf) format("opentype");
+}
+.container {
+  width: 80%;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .herosub {
+    font-size: 36px;
+  }
+
+  .hero {
+    font-family: "Voyage-Regular";
+    font-weight: 700;
+    width: 1000px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    .first {
+      color: bisque;
+      font-size: 48px;
+      margin-bottom: -48px;
+    }
+
+    .main {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 250px;
+      color: transparent;
+      font-size: 96px;
+      background: linear-gradient(
+        to right,
+        #ede342,
+        #f2bf6c,
+        #f69a97,
+        #fb76c1,
+        #ff51eb,
+        #fb76c1,
+        #f69a97,
+        #f2bf6c,
+        #ede342,
+        #f2bf6c,
+        #f69a97,
+        #fb76c1,
+        #ff51eb
+      );
+      background-size: 300% 300%;
+      background-clip: text;
+    }
+
+    .last {
+      color: bisque;
+      font-size: 48px;
+      text-align: right;
+      margin-top: -32px;
+    }
+  }
+}

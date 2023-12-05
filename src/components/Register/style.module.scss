@@ -102,6 +102,17 @@
       cursor: pointer;
     }
   }
+
+  .home {
+    margin-top: 32px;
+    height: 36px;
+    width: 36px;
+    color: bisque;
+  }
+
+  .home:hover {
+    color: white;
+  }
 }
 
 .hide {
@@ -127,6 +138,7 @@
   height: 24px;
   color: #51504e;
 }
+
 .offscreen {
   height: 0px;
   overflow: hidden;

@@ -13,6 +13,99 @@
     margin-bottom: 32px;
   }
 
+  .formcontainer {
+    background-color: #2b2927;
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+    padding: 32px;
+
+    .errormessage {
+      background: red;
+      width: 100%;
+      margin-bottom: 8px;
+      height: 48px;
+      font-size: 24px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 12px;
+      color: white;
+    }
+
+    .form {
+      display: inline-flex;
+      flex-direction: column;
+      gap: 8px;
+      align-items: center;
+
+      .field {
+        display: flex;
+        align-items: center;
+        height: 48px;
+        border-radius: 12px;
+        background-color: #1a1814;
+        padding-left: 12px;
+        padding-right: 12px;
+
+        .label {
+          height: 24px;
+          width: 24px;
+        }
+
+        .input {
+          background-color: transparent;
+          font-family: "Quicksand";
+          font-weight: 600;
+          font-size: 24px;
+          color: #a9a9a9;
+          border: none;
+          outline: none;
+        }
+
+        .input::placeholder {
+          color: #51504e;
+        }
+
+        .verticaldivider {
+          margin-left: 12px;
+          margin-right: 12px;
+          width: 2px;
+          height: 60%;
+          border: 2px solid #2b2927;
+          border-radius: 2px;
+        }
+      }
+
+      .button {
+        font-size: 24px;
+        width: 144px;
+        height: 48px;
+        background-color: #51504e;
+        color: #a9a9a9;
+        border: none;
+        border-radius: 12px;
+        cursor: pointer;
+        margin-top: 24px;
+      }
+
+      .button:hover {
+        border: 2px solid #a9a9a9;
+      }
+
+      .button:disabled {
+        opacity: 0.25;
+        cursor: default;
+      }
+
+      .button:disabled:hover {
+        border: none;
+      }
+    }
+  }
+
   .p {
     font-size: 16px;
     color: #a9a9a9;
@@ -23,4 +116,27 @@
       cursor: pointer;
     }
   }
+}
+
+.icon {
+  width: 24px;
+  height: 24px;
+  color: #51504e;
+}
+
+.offscreen {
+  height: 0px;
+  overflow: hidden;
+  margin-top: -8px;
+}
+
+.home {
+  margin-top: 32px;
+  height: 36px;
+  width: 36px;
+  color: bisque;
+}
+
+.home:hover {
+  color: white;
 }

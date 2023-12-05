@@ -1,0 +1,165 @@
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap");
+
+.container {
+  width: 80%;
+  margin: 0 auto;
+  font-family: "Quicksand";
+  font-weight: 600;
+  color: beige;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+
+  .title {
+    font-size: 64px;
+    margin-top: 16px;
+  }
+
+  .content {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 32px;
+
+    .add {
+      display: flex;
+      height: 64px;
+      width: 64px;
+      background: #06d6a0;
+      gap: 8px;
+      padding: 8px 16px;
+      justify-content: center;
+      align-items: center;
+      border-radius: 128px;
+      font-size: 16px;
+      color: rgb(29, 33, 37);
+      .addicon {
+        width: 24px;
+        height: 24px;
+      }
+
+      &:hover {
+        .addicon {
+          width: 36px;
+          height: 36px;
+        }
+      }
+    }
+
+    .card {
+      background: rgb(29, 33, 37);
+      padding: 8px;
+      border-radius: 16px;
+      display: flex;
+      gap: 8px;
+
+      .image {
+        width: 64px;
+        height: 64px;
+        background-color: black;
+        border-radius: 8px;
+      }
+
+      .information {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        .hoteltitle {
+          font-size: 24px;
+        }
+
+        .hotellocation {
+          font-size: 16px;
+          display: flex;
+
+          .location {
+            width: 192px;
+          }
+
+          .hotelroomprice {
+            display: flex;
+            font-size: 16px;
+            margin-top: auto;
+            gap: 8px;
+
+            .room {
+              background: rgb(52, 58, 63);
+              width: 96px;
+              border-radius: 8px;
+              display: flex;
+              justify-content: center;
+            }
+
+            .verticaldivider {
+              height: 100%;
+              width: 4px;
+              border-radius: 2px;
+              background-color: rgb(52, 58, 63);
+            }
+
+            .price {
+              background: rgb(52, 58, 63);
+              width: 192px;
+              border-radius: 8px;
+              display: flex;
+              justify-content: center;
+            }
+          }
+        }
+      }
+
+      .action {
+        display: flex;
+        gap: 8px;
+        margin-left: auto;
+
+        .button {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          border-radius: 8px;
+          width: 64px;
+          height: 64px;
+          color: rgb(29, 33, 37);
+        }
+
+        .update {
+          background-color: #ffd166;
+        }
+
+        .delete {
+          background-color: #ef476f;
+        }
+
+        .update:hover,
+        .delete:hover {
+          .icon {
+            width: 32px;
+            height: 32px;
+          }
+        }
+
+        .icon {
+          height: 24px;
+          width: 24px;
+        }
+      }
+    }
+
+    .card:hover {
+      background: rgb(57, 64, 70);
+
+      .information {
+        .hotellocation {
+          .hotelroomprice {
+            .room,
+            .price {
+              background: rgb(96, 103, 110);
+            }
+          }
+        }
+      }
+    }
+  }
+}

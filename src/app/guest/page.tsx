@@ -8,7 +8,7 @@ import { Register } from "@/components/Register/Register";
 
 import style from "./style.module.scss";
 
-export default function Guest() {
+export default function page() {
   const [showLogin, setShowLogin] = useState(true);
   const toggleView = () => {
     setShowLogin(!showLogin);

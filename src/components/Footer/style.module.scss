@@ -1,0 +1,43 @@
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap");
+
+.container {
+  font-family: "Quicksand";
+  font-weight: 600;
+  padding-top: 16px;
+  padding-bottom: 16px;
+  display: flex;
+  align-items: center;
+  opacity: 0;
+  transition: 0.25s;
+  background: linear-gradient(to right, #ffadad, #ffd6a5, #fdffb6, #caffbf, #9bf6ff, #a0c4ff, #bdb2ff, #ffc6ff);
+  background-clip: text;
+  width: fit-content;
+  gap: 16px;
+
+  &:hover {
+    opacity: 1;
+  }
+
+  .title {
+    font-size: 36px;
+    color: bisque;
+  }
+
+  .title:hover {
+    color: transparent;
+    font-size: 36px;
+  }
+}
+
+.rtol {
+  animation: rtol 15s infinite linear;
+}
+
+@keyframes rtol {
+  from {
+    transform: translateX(0%);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}

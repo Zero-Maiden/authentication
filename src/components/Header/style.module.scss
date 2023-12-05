@@ -1,0 +1,54 @@
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap");
+
+.container {
+  font-family: "Quicksand";
+  font-weight: 600;
+  padding: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  opacity: 0;
+  transition: 0.25s;
+
+  &:hover {
+    opacity: 1;
+  }
+
+  .title {
+    font-size: 36px;
+    color: bisque;
+  }
+
+  .title:hover {
+    color: gold;
+    font-size: 36px;
+  }
+
+  .menu {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+
+    .link {
+      font-size: 24px;
+      color: bisque;
+    }
+
+    .link:hover {
+      color: white;
+    }
+
+    .middle {
+      margin-left: 32px;
+      margin-right: 32px;
+    }
+
+    .linkcenter {
+      font-size: 36px;
+    }
+
+    .linkcenter:hover {
+      color: gold;
+    }
+  }
+}
