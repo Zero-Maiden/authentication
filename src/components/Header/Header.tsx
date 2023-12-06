@@ -16,9 +16,9 @@ export default function Header() {
   return (
     <div className={style.container}>
       <Magnetic>
-        <div className={style.title}>
+        <div className={style.edge}>
           <Link href="/">
-            <FontAwesomeIcon icon={faHouse} />
+            <FontAwesomeIcon icon={faHouse} className={style.icon} />
           </Link>
         </div>
       </Magnetic>
@@ -37,9 +37,9 @@ export default function Header() {
         </Magnetic>
 
         <Magnetic>
-          <div className={style.middle}>
-            <Link className={`${style.link} ${style.linkcenter}`} href="/hotel">
-              <FontAwesomeIcon icon={faHotel} />
+          <div className={style.center}>
+            <Link className={style.link} href="/hotel">
+              <FontAwesomeIcon icon={faHotel} className={style.icon} />
             </Link>
           </div>
         </Magnetic>
@@ -58,9 +58,9 @@ export default function Header() {
       </div>
 
       <Magnetic>
-        <div className={style.title}>
+        <div className={style.edge}>
           <Link href="/guest">
-            <FontAwesomeIcon icon={faRightToBracket} />
+            <FontAwesomeIcon icon={faRightToBracket} className={style.icon} />
           </Link>
         </div>
       </Magnetic>

@@ -3,34 +3,43 @@
 .container {
   font-family: "Quicksand";
   font-weight: 600;
-  padding-top: 16px;
-  padding-bottom: 16px;
   display: flex;
   align-items: center;
-  opacity: 0;
+  opacity: 1;
   transition: 0.25s;
   background: linear-gradient(to right, #ffadad, #ffd6a5, #fdffb6, #caffbf, #9bf6ff, #a0c4ff, #bdb2ff, #ffc6ff);
   background-clip: text;
   width: fit-content;
   gap: 16px;
+  margin: 16px 0;
 
   &:hover {
     opacity: 1;
   }
 
   .title {
-    font-size: 36px;
+    font-size: 24px;
     color: bisque;
   }
 
   .title:hover {
     color: transparent;
-    font-size: 36px;
+    font-size: 24px;
+  }
+
+  .icon {
+    width: 36px;
+    height: 36px;
+    color: bisque;
+
+    &:hover {
+      color: aquamarine;
+    }
   }
 }
 
 .rtol {
-  animation: rtol 15s infinite linear;
+  animation: rtol 30s infinite linear;
 }
 
 @keyframes rtol {
@@ -39,5 +48,18 @@
   }
   to {
     transform: translateX(-50%);
+  }
+}
+
+.ltor {
+  animation: ltor 30s infinite linear;
+}
+
+@keyframes ltor {
+  from {
+    transform: translateX(-50%);
+  }
+  to {
+    transform: translateY(0%);
   }
 }

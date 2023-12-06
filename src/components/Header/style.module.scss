@@ -3,52 +3,39 @@
 .container {
   font-family: "Quicksand";
   font-weight: 600;
-  padding: 16px;
   display: flex;
+  padding: 16px;
   justify-content: space-between;
-  align-items: center;
-  opacity: 0;
-  transition: 0.25s;
-
-  &:hover {
-    opacity: 1;
-  }
-
-  .title {
-    font-size: 36px;
-    color: bisque;
-  }
-
-  .title:hover {
-    color: gold;
-    font-size: 36px;
-  }
 
   .menu {
     display: flex;
-    align-items: center;
     gap: 32px;
 
     .link {
       font-size: 24px;
+      display: flex;
+      align-items: center;
       color: bisque;
+
+      &:hover {
+        color: gold;
+      }
     }
 
-    .link:hover {
-      color: white;
+    .center {
+      display: flex;
+      align-items: center;
+      margin: 0 32px;
     }
+  }
 
-    .middle {
-      margin-left: 32px;
-      margin-right: 32px;
-    }
+  .icon {
+    width: 36px;
+    height: 36px;
+    color: bisque;
 
-    .linkcenter {
-      font-size: 36px;
-    }
-
-    .linkcenter:hover {
-      color: gold;
+    &:hover {
+      color: aquamarine;
     }
   }
 }

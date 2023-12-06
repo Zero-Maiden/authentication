@@ -5,16 +5,19 @@ import style from "./style.module.scss";
 import Header from "@/components/Header/Header";
 import Divider from "@/components/Divider/Divider";
 import Content from "@/components/Content/Content";
-import Footer from "@/components/Footer/Footer";
+import MarqueeRtoL from "@/components/Marquee/MarqueeRtoL";
+import MarqueeLtoR from "@/components/Marquee/MarqueeLtoR";
 
 export default function Home() {
   return (
     <div className={style.home}>
+      <MarqueeRtoL />
       <Header />
       <Divider />
       <Content />
       <Divider />
-      <Footer />
+      <Header />
+      <MarqueeLtoR />
     </div>
   );
 }
