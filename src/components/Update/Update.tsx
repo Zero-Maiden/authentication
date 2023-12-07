@@ -10,7 +10,7 @@ import { faBed, faGlobe, faHeading, faMoneyBill, faPen, faXmark } from "@fortawe
 
 import { Axios } from "@/api/Axios";
 
-export default function Update({ hotel }) {
+export default function Update({ hotel, fetchDataAfterUpdate }) {
   const [modal, setModal] = useState(false);
   const [updatedHotel, setUpdatedHotel] = useState({
     name: "",
@@ -37,9 +37,11 @@ export default function Update({ hotel }) {
 
   const handleUpdate = async () => {
     try {
-      const updatedData = await Axios.put(`/api/hotel/${hotel.id}`, updatedHotel);
-      // Handle success, update the UI or show a success message
+      const updatedData = await Axios.put(`/api/hotel/${hotel.id}/edit`, updatedHotel);
       console.log("Updated Data:", updatedData);
+
+      // Assuming successful update, invoke the callback function to refetch data
+      fetchDataAfterUpdate();
     } catch (error) {
       console.error("Error updating hotel data:", error);
     }
@@ -111,7 +113,14 @@ export default function Update({ hotel }) {
                   />
                 </div>
 
-                <button type="button" className={style.button} onClick={handleUpdate}>
+                <button
+                  type="button"
+                  className={style.button}
+                  onClick={(event) => {
+                    handleUpdate(event);
+                    handleChange(event);
+                  }}
+                >
                   <FontAwesomeIcon icon={faPen} className={style.updateicon} />
                 </button>
               </div>

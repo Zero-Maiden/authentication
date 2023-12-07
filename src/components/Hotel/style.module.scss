@@ -35,8 +35,16 @@
       .image {
         width: 64px;
         height: 64px;
-        background-color: black;
+        background: rgb(37, 44, 54);
         border-radius: 8px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .icon {
+          height: 32px;
+          width: 32px;
+        }
       }
 
       .information {

@@ -9,12 +9,12 @@
 
   .title {
     font-size: 36px;
-    color: #a9a9a9;
+    color: bisque;
     margin-bottom: 32px;
   }
 
   .formcontainer {
-    background-color: #2b2927;
+    background-color: rgb(29, 33, 37);
     display: inline-flex;
     flex-direction: column;
     align-items: center;
@@ -46,7 +46,7 @@
         align-items: center;
         height: 48px;
         border-radius: 12px;
-        background-color: #1a1814;
+        background-color: rgb(37, 44, 54);
         padding-left: 12px;
         padding-right: 12px;
 
@@ -60,7 +60,7 @@
           margin-right: 12px;
           width: 2px;
           height: 60%;
-          border: 2px solid #2b2927;
+          border: 2px solid rgb(29, 33, 37);
           border-radius: 2px;
         }
       }
@@ -69,8 +69,8 @@
         font-size: 24px;
         width: 144px;
         height: 48px;
-        background-color: #51504e;
-        color: #a9a9a9;
+        background-color: rgb(69, 77, 90);
+        color: rgb(181, 185, 190);
         border: none;
         border-radius: 12px;
         cursor: pointer;
@@ -124,19 +124,19 @@
   font-family: "Quicksand";
   font-weight: 600;
   font-size: 24px;
-  color: #a9a9a9;
+  color: bisque;
   border: none;
   outline: none;
 }
 
 .input::placeholder {
-  color: #51504e;
+  color: rgb(69, 77, 90);
 }
 
 .icon {
   width: 24px;
   height: 24px;
-  color: #51504e;
+  color: bisque;
 }
 
 .offscreen {

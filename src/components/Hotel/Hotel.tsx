@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 import style from "./style.module.scss";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faTrash } from "@fortawesome/free-solid-svg-icons";
+import { faHotel, faTrash } from "@fortawesome/free-solid-svg-icons";
 
 import { Axios } from "@/api/Axios";
 import Add from "../Add/Add";
@@ -19,7 +19,8 @@ export default function Hotel() {
   useEffect(() => {
     Axios.get(HOTEL_READ_URL)
       .then((response) => {
-        setHotel(response.data.message);
+        const sortedHotel = response.data.message.sort((a, b) => a.id - b.id);
+        setHotel(sortedHotel);
       })
       .catch((error) => {
         console.error("Error fetching data:", error);
@@ -27,6 +28,10 @@ export default function Hotel() {
   }, [fetchDataTrigger]);
 
   const fetchDataAfterAddition = () => {
+    setFetchDataTrigger(!fetchDataTrigger);
+  };
+
+  const fetchDataAfterUpdate = () => {
     setFetchDataTrigger(!fetchDataTrigger);
   };
 
@@ -56,7 +61,9 @@ export default function Hotel() {
       <div className={style.content}>
         {hotel.map((hotelData) => (
           <div className={style.card} key={hotelData.id}>
-            <div className={style.image}></div>
+            <div className={style.image}>
+              <FontAwesomeIcon icon={faHotel} className={style.icon} />
+            </div>
             <div className={style.information}>
               <div className={style.hoteltitle}>{hotelData.name}</div>
               <div className={style.hotellocation}>
@@ -68,7 +75,7 @@ export default function Hotel() {
               </div>
             </div>
             <div className={style.action}>
-              <Update hotel={hotelData} />
+              <Update hotel={hotelData} fetchDataAfterUpdate={fetchDataAfterUpdate} />
               <div className={`${style.button} ${style.delete}`} onClick={() => handleDelete(hotelData.id)}>
                 <FontAwesomeIcon icon={faTrash} className={style.icon} />
               </div>
