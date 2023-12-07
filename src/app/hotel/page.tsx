@@ -11,11 +11,13 @@ export default function page() {
   return (
     <div className={style.container}>
       <MarqueeRtoL />
+      <Divider />
       <Header />
       <Divider />
       <Hotel />
       <Divider />
       <Header />
+      <Divider />
       <MarqueeLtoR />
     </div>
   );

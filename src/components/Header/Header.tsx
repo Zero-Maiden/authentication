@@ -5,12 +5,9 @@ import Link from "next/link";
 import style from "./style.module.scss";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faHouse, faStar, faHotel, faRightToBracket } from "@fortawesome/free-solid-svg-icons";
-import { faInfoCircle, faList } from "@fortawesome/free-solid-svg-icons";
+import { faHouse, faHotel, faRightToBracket, faRightFromBracket } from "@fortawesome/free-solid-svg-icons";
 
 import Magnetic from "../Animation/Magnetic/Magnetic";
-
-import RequireAuth from "../RequireAuth";
 
 export default function Header() {
   return (
@@ -25,14 +22,14 @@ export default function Header() {
 
       <div className={style.menu}>
         <Magnetic>
-          <Link className={style.link} href="/admin">
-            Admin
+          <Link className={style.link} href="/menu">
+            Menu
           </Link>
         </Magnetic>
 
         <Magnetic>
-          <Link className={style.link} href="/user">
-            User
+          <Link className={style.link} href="/guest">
+            <FontAwesomeIcon icon={faRightToBracket} className={style.icon} />
           </Link>
         </Magnetic>
 
@@ -45,22 +42,22 @@ export default function Header() {
         </Magnetic>
 
         <Magnetic>
-          <Link className={style.link} href="/">
-            Menu
+          <Link className={style.link} href="/logout">
+            <FontAwesomeIcon icon={faRightFromBracket} className={style.icon} />
           </Link>
         </Magnetic>
 
         <Magnetic>
-          <Link className={style.link} href="/">
-            About
+          <Link className={style.link} href="/menu">
+            Menu
           </Link>
         </Magnetic>
       </div>
 
       <Magnetic>
         <div className={style.edge}>
-          <Link href="/guest">
-            <FontAwesomeIcon icon={faRightToBracket} className={style.icon} />
+          <Link href="/">
+            <FontAwesomeIcon icon={faHouse} className={style.icon} />
           </Link>
         </div>
       </Magnetic>

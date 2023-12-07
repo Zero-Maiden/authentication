@@ -12,11 +12,13 @@ export default function Home() {
   return (
     <div className={style.home}>
       <MarqueeRtoL />
+      <Divider />
       <Header />
       <Divider />
       <Content />
       <Divider />
       <Header />
+      <Divider />
       <MarqueeLtoR />
     </div>
   );
