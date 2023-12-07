@@ -1,0 +1,165 @@
+.update {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+
+  .updatecontainer {
+    width: 64px;
+    height: 64px;
+    background: #ffd166;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .updateicon {
+      width: 24px;
+      height: 24px;
+      color: black;
+    }
+
+    &:hover {
+      .addicon {
+        width: 36px;
+        height: 36px;
+      }
+    }
+  }
+
+  .modalOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .modal {
+    background-color: rgb(37, 44, 54);
+    padding: 16px;
+    border-radius: 40px;
+
+    .modalContent {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+
+      .header {
+        display: flex;
+        align-items: center;
+
+        .titleContainer {
+          background: rgb(29, 33, 37);
+          height: 48px;
+          border-radius: 24px;
+          display: flex;
+          align-items: center;
+          padding: 0 16px;
+
+          .title {
+            font-size: 24px;
+            color: bisque;
+          }
+        }
+
+        .close {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          background-color: #ef476f;
+          color: black;
+          width: 48px;
+          height: 48px;
+          border-radius: 24px;
+          margin-left: auto;
+          margin-right: 0;
+
+          .closeicon {
+            width: 24px;
+            height: 24px;
+          }
+
+          &:hover {
+            .closeicon {
+              width: 32px;
+              height: 32px;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .hotelUpdate {
+    display: flex;
+    flex-direction: column;
+    color: bisque;
+    gap: 8px;
+
+    .inputField {
+      display: flex;
+      background: rgb(29, 33, 37);
+      padding: 8px;
+      border-radius: 32px;
+      align-items: center;
+      height: 48px;
+
+      .icon {
+        width: 24px;
+        height: 24px;
+        margin-left: 12px;
+      }
+
+      .verticalDivider {
+        margin-left: 12px;
+        margin-right: 12px;
+        width: 2px;
+        height: 80%;
+        border: 2px solid rgb(37, 44, 54);
+        border-radius: 2px;
+      }
+    }
+
+    .input {
+      background: transparent;
+      font-size: 24px;
+      outline: none;
+      border: none;
+
+      &::placeholder {
+        color: rgb(72, 79, 88);
+      }
+    }
+
+    .button {
+      background: #06d6a0;
+      height: 48px;
+      width: 96px;
+      border-radius: 24px;
+      margin-left: auto;
+      margin-right: auto;
+      margin-top: 8px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      .updateicon {
+        color: black;
+        height: 24px;
+        width: 24px;
+      }
+
+      &:hover {
+        .addicon {
+          width: 32px;
+          height: 32px;
+        }
+      }
+    }
+  }
+}

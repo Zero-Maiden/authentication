@@ -9,8 +9,6 @@ import { faHotel } from "@fortawesome/free-solid-svg-icons";
 
 import Magnetic from "../Animation/Magnetic/Magnetic";
 
-import RequireAuth from "../RequireAuth";
-
 export default function MarqueeLtoR() {
   return (
     <div className={`${style.container} ${style.ltor}`}>

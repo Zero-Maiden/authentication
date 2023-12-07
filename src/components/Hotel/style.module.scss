@@ -21,31 +21,9 @@
     flex-direction: column;
     gap: 8px;
     margin-bottom: 32px;
-
-    .add {
-      display: flex;
-      height: 64px;
-      width: 64px;
-      background: #06d6a0;
-      gap: 8px;
-      padding: 8px 16px;
-      justify-content: center;
-      align-items: center;
-      border-radius: 128px;
-      font-size: 16px;
-      color: rgb(29, 33, 37);
-      .addicon {
-        width: 24px;
-        height: 24px;
-      }
-
-      &:hover {
-        .addicon {
-          width: 36px;
-          height: 36px;
-        }
-      }
-    }
+    overflow: auto;
+    height: 432px;
+    scrollbar-width: none;
 
     .card {
       background: rgb(29, 33, 37);
@@ -123,10 +101,6 @@
           width: 64px;
           height: 64px;
           color: rgb(29, 33, 37);
-        }
-
-        .update {
-          background-color: #ffd166;
         }
 
         .delete {
