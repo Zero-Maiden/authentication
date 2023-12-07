@@ -23,7 +23,7 @@ export default function Header() {
       <div className={style.menu}>
         <Magnetic>
           <Link className={style.link} href="/menu">
-            Menu
+            About
           </Link>
         </Magnetic>
 
@@ -49,7 +49,7 @@ export default function Header() {
 
         <Magnetic>
           <Link className={style.link} href="/menu">
-            Menu
+            About
           </Link>
         </Magnetic>
       </div>
