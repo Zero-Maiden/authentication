@@ -1,16 +1,11 @@
-import React from "react";
-import { useRef, useState, useEffect, RefObject } from "react";
-import useAuth from "@/hooks/useAuth";
+import React, { useRef, useState, useEffect, RefObject } from "react";
 import { useRouter } from "next/navigation";
 
-// Icons
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAt, faHome, faLock } from "@fortawesome/free-solid-svg-icons";
 
-// Styling
 import style from "./style.module.scss";
 
-// Connect ke back-end Laravel
 import { Axios } from "@/api/Axios";
 const LOGIN_URL = "/api/user/login";
 
@@ -24,8 +19,6 @@ interface LoginProps {
 export const Login: React.FC<LoginProps> = ({ toggleView }) => {
   const route = useRouter();
 
-  const { setAuth } = useAuth();
-
   const userRef = useRef<HTMLInputElement>(null);
   const errorRef: RefObject<HTMLParagraphElement> = useRef(null);
 
@@ -33,6 +26,8 @@ export const Login: React.FC<LoginProps> = ({ toggleView }) => {
   const [password, setPassword] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
   const [success, setSuccess] = useState(false);
+
+  const [token, setToken] = useState("");
 
   // Field in focus
   useEffect(() => {
@@ -52,14 +47,16 @@ export const Login: React.FC<LoginProps> = ({ toggleView }) => {
         headers: { "Content-Type": "application/json" },
         withCredentials: true,
       });
-      console.log(JSON.stringify(response?.data));
-      // console.log(JSON.stringify(response));
-      const accessToken = response?.data?.accessToken;
-      const roles = response?.data?.roles;
-      setAuth({ email, password });
-      setEmail("");
-      setPassword("");
-      setSuccess(true);
+
+      const responseData = response.data;
+      if (responseData.status === 200) {
+        const authToken = responseData.token;
+        setToken(authToken);
+
+        setEmail("");
+        setPassword("");
+        setSuccess(true);
+      }
     } catch (error) {
       if (!error?.response) {
         setErrorMessage("Tidak ada respon dari server");
@@ -73,6 +70,16 @@ export const Login: React.FC<LoginProps> = ({ toggleView }) => {
       errorRef.current.focus();
     }
   };
+
+  useEffect(() => {
+    if (token) {
+      Axios.defaults.headers.common["Authorization"] = `Bearer ${token}`;
+
+      localStorage.setItem("token", token);
+
+      route.push("/");
+    }
+  }, [token]);
 
   return (
     <>

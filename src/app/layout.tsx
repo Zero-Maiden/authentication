@@ -9,14 +9,10 @@ export const metadata: Metadata = {
   description: "Hotel paling malas",
 };
 
-import { AuthProvider } from "@/context/AuthProvider";
-
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
-      <body className={inter.className}>
-        <AuthProvider>{children}</AuthProvider>
-      </body>
+      <body className={inter.className}>{children}</body>
     </html>
   );
 }

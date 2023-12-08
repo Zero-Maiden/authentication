@@ -111,9 +111,11 @@ export const Register: React.FC<LoginProps> = ({ toggleView }) => {
         withCredentials: true,
       });
       console.log(response.data);
-      console.log(response.accessToken);
       console.log(JSON.stringify(response));
+
       setSuccess(true);
+
+      // Kosongkan field setelah registrasi
       setEmail("");
       setUser("");
       setPassword("");
@@ -304,7 +306,7 @@ export const Register: React.FC<LoginProps> = ({ toggleView }) => {
             </span>
           </p>
           <Magnetic>
-            <Link href="/">
+            <Link href="/guest">
               <FontAwesomeIcon icon={faHome} className={style.home} />
             </Link>
           </Magnetic>

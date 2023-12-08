@@ -8,8 +8,16 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHouse, faHotel, faRightToBracket, faRightFromBracket } from "@fortawesome/free-solid-svg-icons";
 
 import Magnetic from "../Animation/Magnetic/Magnetic";
+import { useRouter } from "next/navigation";
 
 export default function Header() {
+  const route = useRouter();
+
+  const handleLogout = () => {
+    localStorage.removeItem("token");
+    route.push("/guest");
+  };
+
   return (
     <div className={style.container}>
       <Magnetic>
@@ -42,9 +50,9 @@ export default function Header() {
         </Magnetic>
 
         <Magnetic>
-          <Link className={style.link} href="/logout">
+          <button className={style.link} onClick={handleLogout}>
             <FontAwesomeIcon icon={faRightFromBracket} className={style.icon} />
-          </Link>
+          </button>
         </Magnetic>
 
         <Magnetic>
