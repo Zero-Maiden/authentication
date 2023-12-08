@@ -57,6 +57,8 @@ export const Register: React.FC<LoginProps> = ({ toggleView }) => {
   const [errorMessage, setErrorMessage] = useState("");
   const [success, setSuccess] = useState(false);
 
+  const [token, setToken] = useState("");
+
   // Field in focus
   useEffect(() => {
     if (userRef.current) {
@@ -115,11 +117,16 @@ export const Register: React.FC<LoginProps> = ({ toggleView }) => {
 
       setSuccess(true);
 
-      // Kosongkan field setelah registrasi
-      setEmail("");
-      setUser("");
-      setPassword("");
-      setMatchPassword("");
+      const responseData = response.data;
+      if (responseData.status === 200) {
+        const authToken = responseData.token;
+        setToken(authToken);
+
+        setEmail("");
+        setUser("");
+        setPassword("");
+        setMatchPassword("");
+      }
     } catch (error) {
       if (!error.response) {
         setErrorMessage("Tidak ada respon dari server!");
@@ -131,6 +138,14 @@ export const Register: React.FC<LoginProps> = ({ toggleView }) => {
       errorRef.current?.focus();
     }
   };
+
+  useEffect(() => {
+    if (token) {
+      Axios.defaults.headers.common["Authorization"] = `Bearer ${token}`;
+      localStorage.setItem("token", token);
+      router.push("/");
+    }
+  }, [token]);
 
   return (
     <>
@@ -306,7 +321,7 @@ export const Register: React.FC<LoginProps> = ({ toggleView }) => {
             </span>
           </p>
           <Magnetic>
-            <Link href="/guest">
+            <Link href="/">
               <FontAwesomeIcon icon={faHome} className={style.home} />
             </Link>
           </Magnetic>
